@@ -1,0 +1,10 @@
+keytool -genkey -alias mydomain -keyalg RSA -keystore keystore.jks  -keysize 2048
+
+Generate a certificate signing request (CSR) for an existing Java keystore
+
+keytool -certreq -alias mydomain -keystore keystore.jks -file mydomain.csr
+
+Import a root or intermediate CA certificate to an existing Java keystore
+
+keytool -import -trustcacerts -alias root -file Thawte.crt -keystore keystore.jks
+
